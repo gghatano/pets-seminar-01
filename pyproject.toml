@@ -1,0 +1,29 @@
+[project]
+name = "pets-seminar-01"
+version = "0.1.0"
+description = "仮名加工情報・匿名加工情報 事例再現デモプロジェクト"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas>=2.0",
+    "numpy>=1.26",
+]
+
+[dependency-groups]
+dev = [
+    "jupyterlab>=4.0",
+    "notebook>=7.0",
+    "nbconvert>=7.0",
+    "pytest>=8.0",
+    "ruff>=0.6",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.uv]
+package = false
