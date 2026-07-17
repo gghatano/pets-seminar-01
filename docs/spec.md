@@ -115,9 +115,9 @@ Notebook内ではダミーデータを生成せず、GitHub上に配置された
 
 4. ディレクトリ構成
 
-以下を基本構成とする。
+以下を基本構成とする（リポジトリルートは pets-seminar-01）。
 
-pseudonymized-anonymized-case-study/
+pets-seminar-01/
 ├── README.md
 ├── pyproject.toml
 ├── uv.lock

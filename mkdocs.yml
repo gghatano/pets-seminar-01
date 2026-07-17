@@ -27,7 +27,10 @@ theme:
         name: ライトモードに切り替え
 
 plugins:
-  - search
+  - search:
+      lang:
+        - ja
+        - en
   # mkdocs-jupyter: docs_dir 配下に置いた .ipynb を実行結果つきで HTML 化する。
   # 加工実装 Notebook の「実行済み結果」を層③に埋め込む際に nav へ追加する。
   - mkdocs-jupyter:
@@ -49,6 +52,7 @@ nav:
   - はじめに: index.md
   - "case01 仮名加工情報":
       - "① 検討":
+          - 要件整理: case01_pseudonymized/00_requirements.md
           - 事例概要: case01_pseudonymized/01_case_summary.md
           - ダミーデータ仕様: case01_pseudonymized/02_dummy_data_spec.md
           - 加工前テーブル定義: case01_pseudonymized/03_table_definition_before.md
