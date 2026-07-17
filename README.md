@@ -2,6 +2,8 @@
 
 仮名加工情報・匿名加工情報 事例再現デモプロジェクト
 
+🌐 **公開サイト: <https://gghatano.github.io/pets-seminar-01/>**
+
 個人情報保護委員会事務局が公開している仮名加工情報・匿名加工情報の事例レポートを一次情報として参照し、
 掲載事例のデータ加工を Python で再現する **デモ・教材** です。
 Jupyter Notebook は Google Colaboratory から実行できる形で提供します。
@@ -85,8 +87,8 @@ uv run mkdocs build --strict
 | ③ 結果 | GitHub Pages（HTML） | 加工前後比較・**確認テスト結果**・加工後分析 |
 
 - サイトは MkDocs + Material（`mkdocs.yml`）で `docs/` の Markdown から生成します。
-- `main` への push で GitHub Actions（`.github/workflows/pages.yml`）が Pages へ自動デプロイします。
-  初回のみリポジトリ設定の **Settings → Pages → Source: GitHub Actions** を有効化してください。
+- `main` への push で GitHub Actions（`.github/workflows/pages.yml`）が Pages へ自動デプロイします
+  （公開先: <https://gghatano.github.io/pets-seminar-01/>）。
 
 ## 作業の進め方
 
