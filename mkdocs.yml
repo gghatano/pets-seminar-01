@@ -1,0 +1,66 @@
+site_name: 仮名加工情報・匿名加工情報 事例再現デモ
+site_description: 個人情報保護委員会事務局の事例レポートに基づく、データ加工設計の思考プロセスを追体験する教材
+site_url: https://gghatano.github.io/pets-seminar-01/
+repo_url: https://github.com/gghatano/pets-seminar-01
+repo_name: gghatano/pets-seminar-01
+docs_dir: docs
+copyright: 教材デモ（合成データ使用）。実際の個人データに対する法令適合性を保証するものではありません。
+
+theme:
+  name: material
+  language: ja
+  features:
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+    - toc.integrate
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-night
+        name: ダークモードに切り替え
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: ライトモードに切り替え
+
+plugins:
+  - search
+  # mkdocs-jupyter: docs_dir 配下に置いた .ipynb を実行結果つきで HTML 化する。
+  # 加工実装 Notebook の「実行済み結果」を層③に埋め込む際に nav へ追加する。
+  - mkdocs-jupyter:
+      include_source: true
+      execute: false
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.superfences
+
+# 3層構成（HTML=検討/結果、Colab=実装）
+nav:
+  - はじめに: index.md
+  - "case01 仮名加工情報":
+      - "① 検討":
+          - 事例概要: case01_pseudonymized/01_case_summary.md
+          - ダミーデータ仕様: case01_pseudonymized/02_dummy_data_spec.md
+          - 加工前テーブル定義: case01_pseudonymized/03_table_definition_before.md
+          - 情報特性・機微度分類: case01_pseudonymized/04_column_classification.md
+          - 利用目的と加工設計: case01_pseudonymized/05_processing_design.md
+          - 加工仕様: case01_pseudonymized/06_processing_spec.md
+      - "② 実装（Colab）": case01_pseudonymized/notebook.md
+      - "③ 結果":
+          - 加工後テーブル定義: case01_pseudonymized/07_table_definition_after.md
+          - 加工結果とチェック: case01_pseudonymized/09_results.md
+  - "case02 匿名加工情報": case02_anonymized/README.md
+  - 参考:
+      - 参照資料: references/README.md
+      - Notebook仕様書: case01_pseudonymized/08_notebook_spec.md
+      - 設計・実装指示書(spec): spec.md

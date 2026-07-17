@@ -955,3 +955,30 @@ Notebookを上から順番に読み、実行することで、
 というデータ加工設計の思考プロセスを、具体的な事例を通じて理解できることに置く。
 
 この版をプロジェクト全体の spec.md 相当として使い、エージェントにまず case01の設計8文書を作成 → 整合性レビュー → ダミーデータ生成 → Notebook実装 の順で進めさせる構成が適しています。
+
+⸻
+
+25. 配信・公開構成（GitHub Pages / Colab の3層構成）
+
+教材の「思考プロセス」を第三者に見せるための配信構成を定める。媒体を役割で分ける。
+
+25.1 3層構成
+
+| 層 | 媒体 | 内容 | 対応する設計成果物 |
+|----|------|------|--------------------|
+| ① 検討 | GitHub Pages（HTML） | 事例理解 → ダミーデータ・テーブル定義 → 利用目的 → 情報特性評価 → 加工設計の決定 | 01, 02, 03, 04, 05, 06 |
+| ② 実装 | Google Colaboratory（Notebook） | 加工設計にもとづく加工処理の実行 | 06 の実装、notebooks/ |
+| ③ 結果 | GitHub Pages（HTML） | 加工前後の比較・確認テスト結果・加工後分析 | 07, 09_results |
+
+25.2 原則
+
+* HTML サイトは `docs/` 配下の Markdown を正本として生成し、内容を二重管理しない（第18節と同じ役割分担を配信にも適用する）。
+* ③の「結果・チェック結果」は、②の Notebook を実行した出力を HTML 化して提示する。加工ロジックを HTML と Notebook に二重実装しない。Notebook を唯一の実行ソースとし、「サイト上の結果 = 実際の実行結果」を保証する。
+* GitHub Pages は公開だが、扱うのは合成データと教材ナラティブのみとする。
+
+25.3 実装
+
+* サイト生成: MkDocs + Material テーマ。Notebook 埋め込みは `mkdocs-jupyter`。
+* 設定は `mkdocs.yml`。ローカルは `uv run mkdocs serve`、ビルドは `uv run mkdocs build --strict`。
+* 公開は GitHub Actions（`.github/workflows/pages.yml`）で `main` への push を契機に自動デプロイする。
+* ②の Notebook は正本を `notebooks/` に置き、Colab から実行する。③に実行済み結果を埋め込む場合は、ビルド時に `notebooks/` の Notebook をサイトへ取り込む。

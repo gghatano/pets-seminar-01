@@ -40,6 +40,12 @@ uv run pytest
 
 # Notebook 編集（ローカル）
 uv run jupyter lab
+
+# デモサイト（GitHub Pages 用）をローカルで確認
+uv run mkdocs serve
+
+# サイトをビルド（CI と同じ strict モード）
+uv run mkdocs build --strict
 ```
 
 必要環境: Python 3.11+ / uv
@@ -67,6 +73,20 @@ uv run jupyter lab
 本プロジェクトのダミーデータ生成（`docs/*/02_dummy_data_spec.md` → `src/dummy_data/*.py` →
 `data/*/raw/`）に活用します。適用方法は
 [`.claude/skills/README.md`](.claude/skills/README.md) を参照してください。
+
+## 配信・公開構成（3層）
+
+デモは媒体を役割で分けて公開します（`docs/spec.md` 第25節）。
+
+| 層 | 媒体 | 内容 |
+|----|------|------|
+| ① 検討 | GitHub Pages（HTML） | 事例理解・情報特性評価・**加工設計の決定** |
+| ② 実装 | Google Colaboratory | 加工処理の**実行** |
+| ③ 結果 | GitHub Pages（HTML） | 加工前後比較・**確認テスト結果**・加工後分析 |
+
+- サイトは MkDocs + Material（`mkdocs.yml`）で `docs/` の Markdown から生成します。
+- `main` への push で GitHub Actions（`.github/workflows/pages.yml`）が Pages へ自動デプロイします。
+  初回のみリポジトリ設定の **Settings → Pages → Source: GitHub Actions** を有効化してください。
 
 ## 作業の進め方
 
