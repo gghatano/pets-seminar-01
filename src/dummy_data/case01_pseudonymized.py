@@ -18,9 +18,7 @@ SEED = 20260717
 
 
 def main() -> None:
-    raise NotImplementedError(
-        "docs/case01_pseudonymized/02_dummy_data_spec.md 確定後に実装する。"
-    )
+    raise NotImplementedError("docs/case01_pseudonymized/02_dummy_data_spec.md 確定後に実装する。")
 
 
 if __name__ == "__main__":

@@ -27,7 +27,10 @@ theme:
         name: ライトモードに切り替え
 
 plugins:
-  - search
+  - search:
+      lang:
+        - ja
+        - en
   # mkdocs-jupyter: docs_dir 配下に置いた .ipynb を実行結果つきで HTML 化する。
   # 加工実装 Notebook の「実行済み結果」を層③に埋め込む際に nav へ追加する。
   - mkdocs-jupyter:
