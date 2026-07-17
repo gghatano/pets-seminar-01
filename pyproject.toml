@@ -16,6 +16,8 @@ dev = [
     "nbconvert>=7.0",
     "pytest>=8.0",
     "ruff>=0.6",
+    "mkdocs-material>=9.7.6",
+    "mkdocs-jupyter>=0.26.3",
 ]
 
 [tool.pytest.ini_options]
