@@ -19,12 +19,8 @@ Jupyter Notebook は Google Colaboratory から実行できる形で提供しま
 
 | 事例 | 種別 | ステータス | Notebook |
 |------|------|-----------|----------|
-| case01 | 仮名加工情報（オンライン通販の顧客・購買データ） | 設計中 | _準備中_ <!-- Open in Colab を後で追加 --> |
+| case01 | 仮名加工情報（オンライン通販の顧客・購買データ） | 実装済み | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gghatano/pets-seminar-01/blob/main/notebooks/case01_pseudonymized.ipynb) |
 | case02 | 匿名加工情報 | 未着手（プレースホルダ） | — |
-
-<!-- Colab 導線（Notebook 実装後に有効化）:
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gghatano/pets-seminar-01/blob/main/notebooks/case01_pseudonymized.ipynb)
--->
 
 ## 開発環境（uv）
 
