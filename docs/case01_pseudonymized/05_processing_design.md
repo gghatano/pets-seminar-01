@@ -7,22 +7,31 @@
 
 ## 加工方針の全体像
 
-```mermaid
-flowchart LR
-    subgraph 削除["削除（分析に不要・リスク）"]
-        A1[氏名] & A2[郵便番号] & A3[携帯電話番号] & A4[電子メールアドレス] & A5[クレジットカード番号] & A6[Cookie ID]
-    end
-    subgraph 置換["置換"]
-        B1[会員ID] --> B2[整理番号]
-    end
-    subgraph 一般化["一般化（粗くする）"]
-        C1[生年月日] --> C2[年代]
-        C3[住所] --> C4[市区町村]
-    end
-    subgraph 維持["加工なし（分析に必要）"]
-        D1[性別] & D2[購入年月日/品目/数量/金額] & D3[アクセス履歴]
-    end
-```
+<div class="proc-head"><span>加工方針</span><span>加工の様子（加工前 → 加工後）</span></div>
+<div class="proc">
+<div class="proc-row"><div class="proc-policy is-chg">置換</div><div class="proc-flows">
+<div class="proc-flow"><span class="proc-chip">会員ID</span><span class="proc-arrow">→</span><span class="proc-chip is-chg">整理番号</span></div>
+</div></div>
+<div class="proc-row"><div class="proc-policy is-chg">一般化</div><div class="proc-flows">
+<div class="proc-flow"><span class="proc-chip">生年月日</span><span class="proc-arrow">→</span><span class="proc-chip is-chg">年代</span></div>
+<div class="proc-flow"><span class="proc-chip">住所</span><span class="proc-arrow">→</span><span class="proc-chip is-chg">市区町村</span></div>
+</div></div>
+<div class="proc-row"><div class="proc-policy is-del">削除</div><div class="proc-flows">
+<div class="proc-flow"><span class="proc-chip">氏名</span><span class="proc-arrow">→</span><span class="proc-chip is-del">***</span></div>
+<div class="proc-flow"><span class="proc-chip">郵便番号</span><span class="proc-arrow">→</span><span class="proc-chip is-del">***</span></div>
+<div class="proc-flow"><span class="proc-chip">携帯電話番号</span><span class="proc-arrow">→</span><span class="proc-chip is-del">***</span></div>
+<div class="proc-flow"><span class="proc-chip">電子メールアドレス</span><span class="proc-arrow">→</span><span class="proc-chip is-del">***</span></div>
+<div class="proc-flow"><span class="proc-chip">クレジットカード番号</span><span class="proc-arrow">→</span><span class="proc-chip is-del">***</span></div>
+<div class="proc-flow"><span class="proc-chip">Cookie ID</span><span class="proc-arrow">→</span><span class="proc-chip is-del">***</span></div>
+</div></div>
+<div class="proc-row"><div class="proc-policy is-keep">加工なし</div><div class="proc-flows">
+<div class="proc-flow"><span class="proc-chip">性別</span><span class="proc-arrow">→</span><span class="proc-chip is-keep">性別</span></div>
+<div class="proc-flow"><span class="proc-chip">購入年月日/品目/数量/金額</span><span class="proc-arrow">→</span><span class="proc-chip is-keep">購入年月日/品目/数量/金額</span></div>
+<div class="proc-flow"><span class="proc-chip">アクセス履歴</span><span class="proc-arrow">→</span><span class="proc-chip is-keep">アクセス履歴</span></div>
+</div></div>
+</div>
+
+<small>削除した項目は加工後データに残りません（表では <code>***</code>）。「加工なし」は前後で同じ＝分析に必要なので手を付けません。</small>
 
 考え方はシンプルです。**分析に要らず特定につながる項目は削る。特定はしたくないが分析には要る項目は、必要な粗さまで一般化して残す。個人単位の履歴は整理番号でつなぐ。**
 
