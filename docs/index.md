@@ -20,6 +20,9 @@
 2. **[② Colab](case01_pseudonymized/notebook.md)** を開いて上から実行する
 3. **[③ 結果](case01_pseudonymized/09_results.md)** で加工の効果を確認する
 
+!!! tip "手を動かして学びたい人へ（逆順ルート）"
+    データ操作に慣れているなら、先に **[▶ Colab](https://colab.research.google.com/github/gghatano/pets-seminar-01/blob/main/notebooks/case01_pseudonymized.ipynb)** を上から流して結果を見てから、①の設計ページで「なぜその加工にするのか」を読む順でも構いません。要点だけ先に掴みたいなら **[1枚チートシート](cheatsheet.md)** が近道です。
+
 ## 事例
 
 | 事例 | 種別 | ステータス | 実行 |
