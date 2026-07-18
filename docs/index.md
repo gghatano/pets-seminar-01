@@ -4,6 +4,7 @@
 
 [▶ Colab でデモを試す](https://colab.research.google.com/github/gghatano/pets-seminar-01/blob/main/notebooks/case01_pseudonymized.ipynb){ .md-button .md-button--primary }
 [まず読む（事例概要へ）](case01_pseudonymized/01_case_summary.md){ .md-button }
+[1枚チートシート（印刷/PDF可）](cheatsheet.md){ .md-button }
 
 !!! info "この教材について"
     - **学べること**: ① 個人データを「見て」どんな性質があるかを評価する目、② 利用目的から「必要な情報・粒度」を考える力、③ Python での具体的な加工方法。
