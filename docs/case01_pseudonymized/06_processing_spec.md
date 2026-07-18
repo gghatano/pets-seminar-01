@@ -1,5 +1,7 @@
 # case01（仮名加工情報）: 加工仕様書
 
+> **このページで決めること**: [加工設計](05_processing_design.md) の方針を、実際の Python 処理（どの列をどう変換するか）に落とし込みます。手を動かす実行は [② Colab](notebook.md) で。
+
 > [加工設計書](05_processing_design.md) の方針を Python 実装可能な処理に落とし込む。実装は Notebook（[② 実装](notebook.md)）で行う。
 
 ## 1. 加工仕様一覧

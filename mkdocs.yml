@@ -12,6 +12,7 @@ theme:
   features:
     - navigation.sections
     - navigation.top
+    - navigation.footer
     - content.code.copy
     - toc.integrate
   palette:
@@ -45,26 +46,31 @@ markdown_extensions:
   - toc:
       permalink: true
   - pymdownx.highlight
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 
 # 3層構成（HTML=検討/結果、Colab=実装）
 nav:
   - はじめに: index.md
   - "case01 仮名加工情報":
       - "① 検討":
-          - 要件整理: case01_pseudonymized/00_requirements.md
           - 事例概要: case01_pseudonymized/01_case_summary.md
           - ダミーデータ仕様: case01_pseudonymized/02_dummy_data_spec.md
           - 加工前テーブル定義: case01_pseudonymized/03_table_definition_before.md
           - 情報特性・機微度分類: case01_pseudonymized/04_column_classification.md
           - 利用目的と加工設計: case01_pseudonymized/05_processing_design.md
           - 加工仕様: case01_pseudonymized/06_processing_spec.md
+          - "（詳細）要件整理": case01_pseudonymized/00_requirements.md
       - "② 実装（Colab）": case01_pseudonymized/notebook.md
       - "③ 結果":
           - 加工後テーブル定義: case01_pseudonymized/07_table_definition_after.md
           - 加工結果とチェック: case01_pseudonymized/09_results.md
-  - "case02 匿名加工情報": case02_anonymized/README.md
+  - "case02 匿名加工情報（準備中）": case02_anonymized/README.md
   - 参考:
+      - 用語集: glossary.md
       - 参照資料: references/README.md
       - Notebook仕様書: case01_pseudonymized/08_notebook_spec.md
       - 設計・実装指示書(spec): spec.md
