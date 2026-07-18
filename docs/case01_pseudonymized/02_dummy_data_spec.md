@@ -1,5 +1,7 @@
 # case01（仮名加工情報）: ダミーデータ仕様書
 
+> **このページで決めること**: デモで使う架空データを、どんな形・件数・傾向で作るか。加工後の分析が「なるほど」と感じられるよう、わざと傾向を持たせています。
+
 > 対象: 事例1（食品オンライン通販の事業者A）。元データ構造は [事例整理](01_case_summary.md) の図表1-1 に基づく。
 > 本仕様のデータモデル・件数・分布はすべて教材用の**独自設定〔独自〕**（レポート未記載）。
 > 実装: [`src/dummy_data/case01_pseudonymized.py`](https://github.com/gghatano/pets-seminar-01/blob/main/src/dummy_data/case01_pseudonymized.py)

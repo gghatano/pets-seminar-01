@@ -1,6 +1,42 @@
 # case01（仮名加工情報）: 加工前テーブル定義書
 
+> **このページで見ること**: 加工する「前」のデータが、どんな表（テーブル）と項目でできているか。3つのテーブルは会員IDでつながっています。
+
 > 対象: 事例1。ダミーデータ（[02 仕様](02_dummy_data_spec.md)）の加工前スキーマ。項目は図表1-1 に対応〔報告〕、値・形式は教材用〔独自〕。
+
+## データモデル（全体像）
+
+```mermaid
+erDiagram
+    customers ||--o{ purchases : "会員ID"
+    customers ||--o{ web_access : "会員ID"
+    customers {
+        string 会員ID PK
+        string 氏名
+        date 生年月日
+        string 性別
+        string 郵便番号
+        string 住所
+        string 携帯電話番号
+        string 電子メールアドレス
+        string クレジットカード番号
+    }
+    purchases {
+        string 購買ID PK
+        string 会員ID FK
+        date 購入年月日
+        string 購入品目
+        int 購入数量
+        int 購入金額
+    }
+    web_access {
+        string アクセスID PK
+        string 会員ID FK
+        string Cookie_ID
+        datetime アクセス日時
+        string 閲覧カテゴリ
+    }
+```
 
 ## customers（顧客マスタ）
 
