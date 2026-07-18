@@ -2,26 +2,35 @@
 
 個人情報保護委員会事務局の事例レポートを参考に、実際のデータ加工を Python で再現する **デモ・教材** です。「どう加工するか」より、**どう考えて加工方針を決めるか**（データ加工設計の思考プロセス）を追体験することを狙いにしています。
 
-[▶ Colab でデモを試す](https://colab.research.google.com/github/gghatano/pets-seminar-01/blob/main/notebooks/case01_pseudonymized.ipynb){ .md-button .md-button--primary }
-[まず読む（事例概要へ）](case01_pseudonymized/01_case_summary.md){ .md-button }
+[① 全体概要からはじめる](case01_pseudonymized/01_case_summary.md){ .md-button .md-button--primary }
+[▶ Colab で動かす](https://colab.research.google.com/github/gghatano/pets-seminar-01/blob/main/notebooks/case01_pseudonymized.ipynb){ .md-button }
 [1枚チートシート（印刷/PDF可）](cheatsheet.md){ .md-button }
 
-## 進め方（3層構成）
+## この教材で進む道のり（全7ステップ）
 
-**事例を知る → データを見る → 情報特性を評価する → 加工方針を設計する → 実装して確認する** の順にたどります。媒体を役割で分けています。
+<div class="wizard wizard--overview" markdown="1">
+クリックで各ステップへ
+{ .wizard-cap }
+
+1. [全体概要](case01_pseudonymized/01_case_summary.md)
+2. [データ概要理解](case01_pseudonymized/03_table_definition_before.md)
+3. [データ詳細理解](case01_pseudonymized/04_column_classification.md)
+4. [加工設計](case01_pseudonymized/05_processing_design.md)
+5. [加工仕様](case01_pseudonymized/06_processing_spec.md)
+6. [実装](case01_pseudonymized/notebook.md)
+7. [結果確認](case01_pseudonymized/09_results.md)
+</div>
+
+①〜⑤は「考え方の設計」（この HTML サイト）、⑥は Colab での実装、⑦は結果の確認です。上の **［① 全体概要からはじめる］** か、ステップ①をクリックして始めてください。
 
 | 層 | 媒体 | やること |
 |----|------|----------|
-| **① 検討** | この HTML サイト | 事例を理解し、なぜその加工にするのかを**設計する** |
-| **② 実装** | Google Colaboratory | 設計にもとづいて、実際に**加工処理を実行する** |
-| **③ 結果** | この HTML サイト | 加工前後を比べ、**目的の分析が成立するか確認する** |
-
-1. **[① 事例概要](case01_pseudonymized/01_case_summary.md)** から読み始める
-2. **[② Colab](case01_pseudonymized/notebook.md)** を開いて上から実行する
-3. **[③ 結果](case01_pseudonymized/09_results.md)** で加工の効果を確認する
+| **① 検討**（ステップ 1〜5） | この HTML サイト | 事例を理解し、なぜその加工にするのかを**設計する** |
+| **② 実装**（ステップ 6） | Google Colaboratory | 設計にもとづいて、実際に**加工処理を実行する** |
+| **③ 結果**（ステップ 7） | この HTML サイト | 加工前後を比べ、**目的の分析が成立するか確認する** |
 
 !!! tip "手を動かして学びたい人へ（逆順ルート）"
-    データ操作に慣れているなら、先に **[▶ Colab](https://colab.research.google.com/github/gghatano/pets-seminar-01/blob/main/notebooks/case01_pseudonymized.ipynb)** を上から流して結果を見てから、①の設計ページで「なぜその加工にするのか」を読む順でも構いません。要点だけ先に掴みたいなら **[1枚チートシート](cheatsheet.md)** が近道です。
+    データ操作に慣れているなら、先に **[▶ Colab](https://colab.research.google.com/github/gghatano/pets-seminar-01/blob/main/notebooks/case01_pseudonymized.ipynb)** を上から流して結果を見てから、設計ページで「なぜその加工にするのか」を読む順でも構いません。要点だけ先に掴みたいなら **[1枚チートシート](cheatsheet.md)** が近道です。
 
 ## 事例
 

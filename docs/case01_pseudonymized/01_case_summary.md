@@ -1,7 +1,17 @@
-# case01（仮名加工情報）: 事例概要
+# case01（仮名加工情報）: 事例概要 — 1/7
 
-**事例** → データを見る → 情報特性 → 加工設計 → 加工仕様 → 実装 → 結果
-{ .process-nav }
+<div class="wizard" markdown="1">
+加工プロセス
+{ .wizard-cap }
+
+1. **全体概要**
+2. [データ概要理解](03_table_definition_before.md)
+3. [データ詳細理解](04_column_classification.md)
+4. [加工設計](05_processing_design.md)
+5. [加工仕様](06_processing_spec.md)
+6. [実装](notebook.md)
+7. [結果確認](09_results.md)
+</div>
 
 > どんな会社が、どんなデータを持っていて、何のために加工したいのか——という「あらすじ」です。ここが分かると、以降の加工判断の理由がつかめます。用語は [用語集](../glossary.md) を参照。
 
