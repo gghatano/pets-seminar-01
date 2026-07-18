@@ -7,6 +7,7 @@ docs_dir: docs
 copyright: 教材デモ（合成データ使用）。実際の個人データに対する法令適合性を保証するものではありません。
 
 extra_css:
+  - stylesheets/extra.css
   - stylesheets/print.css
 
 theme:
@@ -48,6 +49,7 @@ markdown_extensions:
   - tables
   - toc:
       permalink: true
+  - pymdownx.details
   - pymdownx.highlight
   - pymdownx.superfences:
       custom_fences:
@@ -62,12 +64,10 @@ nav:
   - "case01 仮名加工情報":
       - "① 検討":
           - 事例概要: case01_pseudonymized/01_case_summary.md
-          - ダミーデータ仕様: case01_pseudonymized/02_dummy_data_spec.md
-          - 加工前テーブル定義: case01_pseudonymized/03_table_definition_before.md
-          - 情報特性・機微度分類: case01_pseudonymized/04_column_classification.md
-          - 利用目的と加工設計: case01_pseudonymized/05_processing_design.md
+          - データを見る（テーブル定義）: case01_pseudonymized/03_table_definition_before.md
+          - 情報特性の評価: case01_pseudonymized/04_column_classification.md
+          - 加工の設計: case01_pseudonymized/05_processing_design.md
           - 加工仕様: case01_pseudonymized/06_processing_spec.md
-          - "（詳細）要件整理": case01_pseudonymized/00_requirements.md
       - "② 実装（Colab）": case01_pseudonymized/notebook.md
       - "③ 結果":
           - 加工後テーブル定義: case01_pseudonymized/07_table_definition_after.md
@@ -75,6 +75,7 @@ nav:
   - "case02 匿名加工情報（準備中）": case02_anonymized/README.md
   - 参考:
       - 用語集: glossary.md
+      - デモデータについて: case01_pseudonymized/02_dummy_data_spec.md
       - 参照資料: references/README.md
       - Notebook仕様書: case01_pseudonymized/08_notebook_spec.md
       - 設計・実装指示書(spec): spec.md

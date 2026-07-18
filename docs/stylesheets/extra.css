@@ -1,0 +1,52 @@
+/* 全体プロセスと現在地を示すステッパー（各ページ冒頭に配置） */
+
+.process-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.15rem;
+  align-items: center;
+  font-size: 0.68rem;
+  line-height: 1.4;
+  margin: 0 0 1.2rem;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.4rem;
+  background: var(--md-code-bg-color);
+  color: var(--md-default-fg-color--light);
+  overflow-x: auto;
+}
+
+/* 各ステップ（`code` 記法で囲むとスパン化される） */
+.process-nav code {
+  background: transparent;
+  padding: 0.1rem 0.35rem;
+  border-radius: 0.3rem;
+  color: var(--md-default-fg-color--light);
+  box-shadow: none;
+  white-space: nowrap;
+}
+
+/* 現在地（**強調** = strong） */
+.process-nav strong {
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  padding: 0.1rem 0.45rem;
+  border-radius: 0.3rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* 印刷時はステッパーを控えめに */
+@media print {
+  .process-nav {
+    border: none;
+    background: none;
+    font-size: 0.6rem;
+    padding: 0;
+  }
+  .process-nav strong {
+    background: none;
+    color: #000;
+    text-decoration: underline;
+  }
+}
