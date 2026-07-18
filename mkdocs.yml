@@ -6,6 +6,9 @@ repo_name: gghatano/pets-seminar-01
 docs_dir: docs
 copyright: 教材デモ（合成データ使用）。実際の個人データに対する法令適合性を保証するものではありません。
 
+extra_css:
+  - stylesheets/print.css
+
 theme:
   name: material
   language: ja
@@ -55,6 +58,7 @@ markdown_extensions:
 # 3層構成（HTML=検討/結果、Colab=実装）
 nav:
   - はじめに: index.md
+  - 1枚チートシート: cheatsheet.md
   - "case01 仮名加工情報":
       - "① 検討":
           - 事例概要: case01_pseudonymized/01_case_summary.md
