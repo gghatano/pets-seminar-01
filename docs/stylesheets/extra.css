@@ -16,14 +16,29 @@
   overflow-x: auto;
 }
 
-/* 各ステップ（`code` 記法で囲むとスパン化される） */
-.process-nav code {
-  background: transparent;
-  padding: 0.1rem 0.35rem;
-  border-radius: 0.3rem;
+/* 先頭のラベル（加工プロセス） */
+.md-typeset .process-nav .proc-tag {
+  font-weight: 700;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
   color: var(--md-default-fg-color--light);
-  box-shadow: none;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+  padding: 0.08rem 0.4rem;
+  margin-right: 0.15rem;
   white-space: nowrap;
+}
+
+/* 各ステップへのリンク */
+.md-typeset .process-nav a {
+  color: var(--md-default-fg-color--light);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--md-default-fg-color--lighter);
+  white-space: nowrap;
+}
+.md-typeset .process-nav a:hover {
+  color: var(--md-primary-fg-color);
+  border-bottom-color: currentColor;
 }
 
 /* 現在地（**強調** = strong） */

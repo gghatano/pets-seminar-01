@@ -1,6 +1,6 @@
-# case01（仮名加工情報）: 情報特性の評価
+# case01（仮名加工情報）: 情報特性の評価 — 3/7
 
-事例 → データを見る → **情報特性** → 加工設計 → 加工仕様 → 実装 → 結果
+<span class="proc-tag">加工プロセス</span> [全体概要](01_case_summary.md) → [データ概要理解](03_table_definition_before.md) → **データ詳細理解** → [加工設計](05_processing_design.md) → [加工仕様](06_processing_spec.md) → [実装](notebook.md) → [結果確認](09_results.md)
 { .process-nav }
 
 > 加工方針を決める前の下ごしらえ。各項目を **「単体で個人を特定できるか」「組み合わせで特定につながるか」「結合に必要か」** の観点で見極めます。用語は [用語集](../glossary.md) を参照。

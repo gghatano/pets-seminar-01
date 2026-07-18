@@ -1,6 +1,6 @@
-# ③ 加工結果とチェック
+# ③ 加工結果とチェック — 7/7
 
-事例 → データを見る → 情報特性 → 加工設計 → 加工仕様 → 実装 → **結果**
+<span class="proc-tag">加工プロセス</span> [全体概要](01_case_summary.md) → [データ概要理解](03_table_definition_before.md) → [データ詳細理解](04_column_classification.md) → [加工設計](05_processing_design.md) → [加工仕様](06_processing_spec.md) → [実装](notebook.md) → **結果確認**
 { .process-nav }
 
 > [② 実装（Colab）](notebook.md) の Notebook をコミット済みデータに対して実行した結果です（決定的なので Colab 実行と一致します）。加工後スキーマは [加工後テーブル定義](07_table_definition_after.md) を参照。

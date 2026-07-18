@@ -1,6 +1,6 @@
-# ② 実装（Google Colaboratory）
+# ② 実装（Google Colaboratory） — 6/7
 
-事例 → データを見る → 情報特性 → 加工設計 → 加工仕様 → **実装（Colab）** → 結果
+<span class="proc-tag">加工プロセス</span> [全体概要](01_case_summary.md) → [データ概要理解](03_table_definition_before.md) → [データ詳細理解](04_column_classification.md) → [加工設計](05_processing_design.md) → [加工仕様](06_processing_spec.md) → **実装** → [結果確認](09_results.md)
 { .process-nav }
 
 加工設計（[① 検討](05_processing_design.md)）にもとづく **加工処理の実行** は、Google Colaboratory 上の Notebook で行います。ブラウザだけで上から順に実行できます。

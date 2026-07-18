@@ -1,6 +1,6 @@
-# case01（仮名加工情報）: 加工の設計
+# case01（仮名加工情報）: 加工の設計 — 4/7
 
-事例 → データを見る → 情報特性 → **加工設計** → 加工仕様 → 実装 → 結果
+<span class="proc-tag">加工プロセス</span> [全体概要](01_case_summary.md) → [データ概要理解](03_table_definition_before.md) → [データ詳細理解](04_column_classification.md) → **加工設計** → [加工仕様](06_processing_spec.md) → [実装](notebook.md) → [結果確認](09_results.md)
 { .process-nav }
 
 > 各項目を「削除する／置き換える／粗くする／そのまま残す」のどれにするか、そしてその理由。判断は **識別性 × 機微度 × 利用目的上の必要性 × 必要粒度** の掛け合わせで決めます。
