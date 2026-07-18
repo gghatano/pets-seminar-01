@@ -230,3 +230,81 @@
   color: var(--md-default-fg-color--light);
   font-weight: 700;
 }
+
+/* 評価×方針マスター表: 加工が必要なセル／規則注意の色付け */
+
+.md-typeset table.master {
+  font-size: 0.78rem;
+}
+
+.md-typeset table.master td.cell-del {
+  background: rgba(214, 90, 80, 0.16);
+  box-shadow: inset 3px 0 #d65a50;
+  font-weight: 700;
+}
+.md-typeset table.master td.cell-chg {
+  background: rgba(76, 175, 125, 0.16);
+  box-shadow: inset 3px 0 #4caf7d;
+  font-weight: 700;
+}
+.md-typeset table.master td.cell-keep {
+  color: var(--md-default-fg-color--light);
+}
+
+/* 委員会規則で必須の行は薄く注意色、規則セルにバッジ */
+.md-typeset table.master tr.is-required td {
+  background: rgba(230, 160, 30, 0.07);
+}
+.md-typeset table.master tr.is-required td.cell-del {
+  background: rgba(214, 90, 80, 0.16);
+}
+.md-typeset table.master .rule {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.35;
+  padding: 0.05rem 0.4rem;
+  border-radius: 4px;
+  background: rgba(230, 160, 30, 0.18);
+  border: 1px solid rgba(230, 160, 30, 0.7);
+  color: var(--md-default-fg-color);
+  white-space: nowrap;
+}
+
+/* 凡例 */
+.md-typeset .master-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.9rem;
+  font-size: 0.72rem;
+  color: var(--md-default-fg-color--light);
+  margin: 0.2rem 0 0.6rem;
+}
+.md-typeset .master-legend .lg {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.md-typeset .master-legend .sw {
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 3px;
+  display: inline-block;
+  border: 1px solid transparent;
+}
+.md-typeset .master-legend .sw-chg {
+  background: rgba(76, 175, 125, 0.35);
+  border-color: #4caf7d;
+}
+.md-typeset .master-legend .sw-del {
+  background: rgba(214, 90, 80, 0.35);
+  border-color: #d65a50;
+}
+.md-typeset .master-legend .sw-keep {
+  background: var(--md-code-bg-color);
+  border-color: var(--md-default-fg-color--lighter);
+}
+.md-typeset .master-legend .sw-rule {
+  background: rgba(230, 160, 30, 0.35);
+  border-color: rgba(230, 160, 30, 0.9);
+}
