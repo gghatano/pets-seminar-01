@@ -1,68 +1,137 @@
-/* 全体プロセスと現在地を示すステッパー（各ページ冒頭に配置） */
+/* 加工プロセスのウィザード（番号バッジ＋コネクタ＋完了/現在/これから） */
 
-.process-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem 0.15rem;
-  align-items: center;
-  font-size: 0.68rem;
-  line-height: 1.4;
-  margin: 0 0 1.2rem;
-  padding: 0.45rem 0.6rem;
-  border: 1px solid var(--md-default-fg-color--lightest);
-  border-radius: 0.4rem;
-  background: var(--md-code-bg-color);
-  color: var(--md-default-fg-color--light);
+.md-typeset .wizard {
   overflow-x: auto;
+  margin: 0 0 1.5rem;
+  padding-bottom: 0.15rem;
 }
 
-/* 先頭のラベル（加工プロセス） */
-.md-typeset .process-nav .proc-tag {
-  font-weight: 700;
+.md-typeset .wizard .wizard-cap {
   font-size: 0.62rem;
-  letter-spacing: 0.08em;
-  color: var(--md-default-fg-color--light);
-  border: 1px solid var(--md-default-fg-color--lightest);
-  border-radius: 4px;
-  padding: 0.08rem 0.4rem;
-  margin-right: 0.15rem;
-  white-space: nowrap;
-}
-
-/* 各ステップへのリンク */
-.md-typeset .process-nav a {
-  color: var(--md-default-fg-color--light);
-  text-decoration: none;
-  border-bottom: 1px dotted var(--md-default-fg-color--lighter);
-  white-space: nowrap;
-}
-.md-typeset .process-nav a:hover {
-  color: var(--md-primary-fg-color);
-  border-bottom-color: currentColor;
-}
-
-/* 現在地（**強調** = strong） */
-.process-nav strong {
-  background: var(--md-primary-fg-color);
-  color: var(--md-primary-bg-color);
-  padding: 0.1rem 0.45rem;
-  border-radius: 0.3rem;
   font-weight: 700;
-  white-space: nowrap;
+  letter-spacing: 0.1em;
+  color: var(--md-default-fg-color--light);
+  margin: 0 0 0.55rem;
 }
 
-/* 印刷時はステッパーを控えめに */
+.md-typeset .wizard > ol {
+  list-style: none;
+  counter-reset: wstep;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  min-width: max-content;
+}
+
+.md-typeset .wizard > ol > li {
+  counter-increment: wstep;
+  position: relative;
+  z-index: 0;
+  flex: 1 1 0;
+  min-width: 5rem;
+  max-width: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0 0.15rem;
+  text-align: center;
+  font-size: 0.66rem;
+  line-height: 1.25;
+}
+
+/* 番号バッジ（既定 = 完了ステップ） */
+.md-typeset .wizard > ol > li::before {
+  content: counter(wstep);
+  z-index: 1;
+  width: 1.65rem;
+  height: 1.65rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+  background: var(--md-default-bg-color);
+  border: 2px solid var(--md-primary-fg-color);
+  color: var(--md-primary-fg-color);
+}
+
+/* コネクタ線（この li の中心 → 次の li の中心。既定 = 完了） */
+.md-typeset .wizard > ol > li::after {
+  content: "";
+  position: absolute;
+  top: 0.8rem;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background: var(--md-primary-fg-color);
+  z-index: 0;
+}
+.md-typeset .wizard > ol > li:last-child::after {
+  display: none;
+}
+
+/* ラベル */
+.md-typeset .wizard > ol > li > a {
+  color: var(--md-default-fg-color);
+  text-decoration: none;
+  border: none;
+}
+.md-typeset .wizard > ol > li > a:hover {
+  color: var(--md-primary-fg-color);
+  text-decoration: underline;
+}
+
+/* 現在地 */
+.md-typeset .wizard > ol > li:has(> strong) {
+  color: var(--md-primary-fg-color);
+  font-weight: 700;
+}
+.md-typeset .wizard > ol > li:has(> strong)::before {
+  background: var(--md-primary-fg-color);
+  border-color: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  box-shadow: 0 0 0 3px var(--md-accent-fg-color--transparent, rgba(63, 81, 181, 0.18));
+}
+.md-typeset .wizard > ol > li:has(> strong)::after,
+.md-typeset .wizard > ol > li:has(> strong) ~ li::after {
+  background: var(--md-default-fg-color--lightest);
+}
+
+/* これから（現在地より後） */
+.md-typeset .wizard > ol > li:has(> strong) ~ li {
+  color: var(--md-default-fg-color--light);
+  font-weight: 400;
+}
+.md-typeset .wizard > ol > li:has(> strong) ~ li::before {
+  border-color: var(--md-default-fg-color--lighter);
+  color: var(--md-default-fg-color--light);
+}
+.md-typeset .wizard > ol > li:has(> strong) ~ li > a {
+  color: var(--md-default-fg-color--light);
+}
+
+/* 一覧モード（トップページの行程表示。現在地なし・全ステップがメニュー） */
+.md-typeset .wizard--overview > ol > li::before {
+  border-color: var(--md-primary-fg-color);
+  color: var(--md-primary-fg-color);
+}
+.md-typeset .wizard--overview > ol > li::after {
+  background: var(--md-default-fg-color--lightest);
+}
+
 @media print {
-  .process-nav {
-    border: none;
-    background: none;
-    font-size: 0.6rem;
-    padding: 0;
-  }
-  .process-nav strong {
-    background: none;
+  .md-typeset .wizard > ol > li::before {
+    border-color: #000;
     color: #000;
-    text-decoration: underline;
+  }
+  .md-typeset .wizard > ol > li::after {
+    background: #000;
+  }
+  .md-typeset .wizard > ol > li:has(> strong)::before {
+    background: #000;
+    color: #fff;
   }
 }
 

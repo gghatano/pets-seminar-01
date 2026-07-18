@@ -1,7 +1,17 @@
 # case01（仮名加工情報）: 加工仕様 — 5/7
 
-<span class="proc-tag">加工プロセス</span> [全体概要](01_case_summary.md) → [データ概要理解](03_table_definition_before.md) → [データ詳細理解](04_column_classification.md) → [加工設計](05_processing_design.md) → **加工仕様** → [実装](notebook.md) → [結果確認](09_results.md)
-{ .process-nav }
+<div class="wizard" markdown="1">
+加工プロセス
+{ .wizard-cap }
+
+1. [全体概要](01_case_summary.md)
+2. [データ概要理解](03_table_definition_before.md)
+3. [データ詳細理解](04_column_classification.md)
+4. [加工設計](05_processing_design.md)
+5. **加工仕様**
+6. [実装](notebook.md)
+7. [結果確認](09_results.md)
+</div>
 
 > [加工の設計](05_processing_design.md) の方針を、実際の Python 処理（どの列をどう変換するか）に落とし込みます。手を動かす実行は [② Colab](notebook.md) で。
 

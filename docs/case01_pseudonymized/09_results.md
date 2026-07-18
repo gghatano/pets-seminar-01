@@ -1,7 +1,17 @@
 # ③ 加工結果とチェック — 7/7
 
-<span class="proc-tag">加工プロセス</span> [全体概要](01_case_summary.md) → [データ概要理解](03_table_definition_before.md) → [データ詳細理解](04_column_classification.md) → [加工設計](05_processing_design.md) → [加工仕様](06_processing_spec.md) → [実装](notebook.md) → **結果確認**
-{ .process-nav }
+<div class="wizard" markdown="1">
+加工プロセス
+{ .wizard-cap }
+
+1. [全体概要](01_case_summary.md)
+2. [データ概要理解](03_table_definition_before.md)
+3. [データ詳細理解](04_column_classification.md)
+4. [加工設計](05_processing_design.md)
+5. [加工仕様](06_processing_spec.md)
+6. [実装](notebook.md)
+7. **結果確認**
+</div>
 
 > [② 実装（Colab）](notebook.md) の Notebook をコミット済みデータに対して実行した結果です（決定的なので Colab 実行と一致します）。加工後スキーマは [加工後テーブル定義](07_table_definition_after.md) を参照。
 

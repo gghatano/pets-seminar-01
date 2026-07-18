@@ -1,7 +1,17 @@
 # ② 実装（Google Colaboratory） — 6/7
 
-<span class="proc-tag">加工プロセス</span> [全体概要](01_case_summary.md) → [データ概要理解](03_table_definition_before.md) → [データ詳細理解](04_column_classification.md) → [加工設計](05_processing_design.md) → [加工仕様](06_processing_spec.md) → **実装** → [結果確認](09_results.md)
-{ .process-nav }
+<div class="wizard" markdown="1">
+加工プロセス
+{ .wizard-cap }
+
+1. [全体概要](01_case_summary.md)
+2. [データ概要理解](03_table_definition_before.md)
+3. [データ詳細理解](04_column_classification.md)
+4. [加工設計](05_processing_design.md)
+5. [加工仕様](06_processing_spec.md)
+6. **実装**
+7. [結果確認](09_results.md)
+</div>
 
 加工設計（[① 検討](05_processing_design.md)）にもとづく **加工処理の実行** は、Google Colaboratory 上の Notebook で行います。ブラウザだけで上から順に実行できます。
 
