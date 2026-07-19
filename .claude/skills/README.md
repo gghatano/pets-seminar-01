@@ -20,12 +20,14 @@
 upstream の想定は `examples/<task>/{source,input,work,src,output}` というタスク作業ディレクトリです。
 本プロジェクトでは以下のように対応づけて使います。
 
+`<case>` は事例ディレクトリ名（`case01_pseudonymized` / `case02_anonymized` / …）。
+
 | upstream の成果物 | 本プロジェクトでの対応 |
 |-------------------|------------------------|
-| `input/table_definition*` | `docs/case01_pseudonymized/03_table_definition_before.md` |
-| `input/data_spec.md` / `input/constraints.md` | `docs/case01_pseudonymized/02_dummy_data_spec.md`（データモデル・件数・分布・制約） |
-| `src/generator.py` | `src/dummy_data/case01_pseudonymized.py` |
-| `output/*.csv` | `data/case01_pseudonymized/raw/` |
+| `input/table_definition*` | `docs/<case>/03_table_definition_before.md` |
+| `input/data_spec.md` / `input/constraints.md` | `docs/<case>/02_dummy_data_spec.md`（データモデル・件数・分布・制約） |
+| `src/generator.py` | `src/dummy_data/<case>.py` |
+| `output/*.csv` | `data/<case>/raw/` |
 | `output/evaluation_report.md` ほか評価成果物 | ダミーデータの品質確認（spec.md 第22節 step15）に利用 |
 
 ### 使い方の例
