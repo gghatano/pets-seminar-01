@@ -37,7 +37,7 @@
 | 事例 | 種別 | ステータス | 実行 |
 |------|------|-----------|------|
 | **case01** | 仮名加工情報（食品オンライン通販の顧客・購買データ） | ✅ 公開中 | [Colab](https://colab.research.google.com/github/gghatano/pets-seminar-01/blob/main/notebooks/case01_pseudonymized.ipynb) |
-| case02 | 匿名加工情報 | 🚧 準備中 | — |
+| **case02** | 匿名加工情報（ID-POS 購買データの第三者提供） | ✅ 公開中 | [Colab](https://colab.research.google.com/github/gghatano/pets-seminar-01/blob/main/notebooks/case02_anonymized.ipynb) |
 
 !!! info "この教材について"
     - **学べること**: ① 個人データを「見て」性質を評価する目、② 利用目的から「必要な情報・粒度」を考える力、③ Python での具体的な加工方法。
