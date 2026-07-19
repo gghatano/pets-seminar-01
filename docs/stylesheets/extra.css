@@ -112,15 +112,6 @@
   color: var(--md-default-fg-color--light);
 }
 
-/* 一覧モード（トップページの行程表示。現在地なし・全ステップがメニュー） */
-.md-typeset .wizard--overview > ol > li::before {
-  border-color: var(--md-primary-fg-color);
-  color: var(--md-primary-fg-color);
-}
-.md-typeset .wizard--overview > ol > li::after {
-  background: var(--md-default-fg-color--lightest);
-}
-
 @media print {
   .md-typeset .wizard > ol > li::before {
     border-color: #000;
