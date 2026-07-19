@@ -58,32 +58,33 @@
 
 ## 項目ごとの評価と加工方針（一覧）
 
-[情報特性の評価](04_column_classification.md)（識別性・機微度・結合キー性）と、利用目的（地域 × 顧客層 × 商品関心の分析）から見た**分析上の必要性・必要粒度**を突き合わせ、**評価 → 方針**を1枚で決めます。**色は加工の種類**（緑＝置換/一般化・赤＝削除・無色＝加工なし）、**橙のバッジは委員会規則で削除が必須**の項目です。
+[情報特性の評価](04_column_classification.md)（識別性・機微度・結合キー性）と、利用目的（地域 × 顧客層 × 商品関心の分析）から見た**分析上の必要性・必要粒度**を突き合わせ、**評価 → 方針**を1枚で決めます。色は加工の種類（緑＝置換/一般化・赤＝削除・無色＝加工なし）、**「加工の根拠」列**は加工する理由の区分です。
 
-<p class="master-legend"><span class="lg"><span class="sw sw-chg"></span>置換・一般化（変換して残す）</span><span class="lg"><span class="sw sw-del"></span>削除</span><span class="lg"><span class="sw sw-keep"></span>加工なし</span><span class="lg"><span class="sw sw-rule"></span>委員会規則で削除が必須</span></p>
+<p class="master-legend"><span class="lg"><span class="sw sw-chg"></span>置換・一般化</span><span class="lg"><span class="sw sw-del"></span>削除</span><span class="lg"><span class="sw sw-keep"></span>加工なし</span><span class="lg"><span class="sw sw-rule"></span>規則で必須</span><span class="lg"><span class="sw sw-vol"></span>自主的（予防的）</span></p>
 
 <table class="master">
-<thead><tr><th>項目</th><th>識別性</th><th>機微度</th><th>分析上の必要性</th><th>必要粒度</th><th>加工方針</th><th>委員会規則</th><th>理由</th></tr></thead>
+<thead><tr><th>項目</th><th>識別性</th><th>機微度</th><th>分析上の必要性</th><th>必要粒度</th><th>加工方針</th><th>加工の根拠</th><th>理由</th></tr></thead>
 <tbody>
-<tr><td>会員ID</td><td>低（単体）</td><td>低</td><td>結合に必要</td><td>―</td><td class="cell-chg">整理番号へ置換</td><td>―</td><td>個人単位の履歴をつなぐため置換。作成元との照合＝識別禁止義務のリスク低減</td></tr>
+<tr><td>会員ID</td><td>低（単体）</td><td>低</td><td>結合に必要</td><td>―</td><td class="cell-chg">整理番号へ置換</td><td><span class="vol">自主的</span></td><td>個人単位の履歴をつなぐため置換。作成元との照合＝識別禁止義務のリスク低減</td></tr>
 <tr class="is-required"><td>氏名</td><td>高（直接識別子）</td><td>中</td><td>不要</td><td>―</td><td class="cell-del">削除</td><td><span class="rule">施行規則31条1号</span></td><td>特定の個人を識別できる記述</td></tr>
-<tr><td>生年月日</td><td>準（組合せで高）</td><td>中</td><td>必要</td><td>10歳区切り</td><td class="cell-chg">年代へ一般化</td><td>―</td><td>詳細日付は不要、識別リスク低減</td></tr>
+<tr><td>生年月日</td><td>準（組合せで高）</td><td>中</td><td>必要</td><td>10歳区切り</td><td class="cell-chg">年代へ一般化</td><td><span class="vol">自主的</span></td><td>詳細日付は不要。準識別子の組合せリスクを下げる予防的な一般化（解釈によっては不要とも）</td></tr>
 <tr><td>性別</td><td>準（低）</td><td>低</td><td>必要</td><td>そのまま</td><td class="cell-keep">加工しない</td><td>―</td><td>生年月日・住所を加工済み</td></tr>
-<tr><td>郵便番号</td><td>準（低）</td><td>低</td><td>不要</td><td>―</td><td class="cell-del">削除</td><td>―</td><td>加工後の住所で代替</td></tr>
-<tr><td>住所</td><td>準（組合せで高）</td><td>中</td><td>必要</td><td>市区町村</td><td class="cell-chg">市区町村へ一般化</td><td>―</td><td>商圏判定に十分な粒度</td></tr>
-<tr><td>携帯電話番号</td><td>高（本人到達性）</td><td>中</td><td>不要</td><td>―</td><td class="cell-del">削除</td><td>―</td><td>本人到達性・共用性</td></tr>
+<tr><td>郵便番号</td><td>準（低）</td><td>低</td><td>不要</td><td>―</td><td class="cell-del">削除</td><td><span class="vol">自主的</span></td><td>加工後の住所で代替できるため不要</td></tr>
+<tr><td>住所</td><td>準（組合せで高）</td><td>中</td><td>必要</td><td>市区町村</td><td class="cell-chg">市区町村へ一般化</td><td><span class="vol">自主的</span></td><td>準識別子リスク低減の予防的な一般化。商圏判定には市区町村で十分</td></tr>
+<tr><td>携帯電話番号</td><td>高（本人到達性）</td><td>中</td><td>不要</td><td>―</td><td class="cell-del">削除</td><td><span class="vol">自主的</span></td><td>本人到達性・共用性を踏まえた予防的削除</td></tr>
 <tr class="is-required"><td>電子メールアドレス</td><td>高（本人到達性）</td><td>中</td><td>不要</td><td>―</td><td class="cell-del">削除</td><td><span class="rule">施行規則31条1号</span></td><td>本人到達性・共用性。氏名等を含み識別できる場合は削除対象</td></tr>
 <tr class="is-required"><td>クレジットカード番号</td><td>高</td><td>高</td><td>不要</td><td>―</td><td class="cell-del">削除</td><td><span class="rule">施行規則31条3号</span></td><td>不正利用で財産的被害のおそれ。<strong>分析に使いたくても削除が必須</strong></td></tr>
-<tr><td>Cookie ID</td><td>中（本人到達性）</td><td>中</td><td>不要</td><td>―</td><td class="cell-del">削除</td><td>―</td><td>本人到達性。会員ID→整理番号を識別子に使うため不要</td></tr>
+<tr><td>Cookie ID</td><td>中（本人到達性）</td><td>中</td><td>不要</td><td>―</td><td class="cell-del">削除</td><td><span class="vol">自主的</span></td><td>本人到達性。会員ID→整理番号を識別子に使うため不要</td></tr>
 <tr><td>購入年月日・品目・数量・金額</td><td>低</td><td>低</td><td>必要</td><td>そのまま</td><td class="cell-keep">加工しない</td><td>―</td><td>購買動向分析に必要</td></tr>
 <tr><td>アクセス日時・閲覧カテゴリ</td><td>低</td><td>低</td><td>必要</td><td>そのまま</td><td class="cell-keep">加工しない</td><td>―</td><td>閲覧→購入・反応分析に必要</td></tr>
 </tbody>
 </table>
 
-!!! warning "「分析に必要か」とは別に、委員会規則で削除が必須の項目がある"
-    加工の要否は、**① 分析に必要か（設計判断）** と **② 委員会規則で必須か（法令）** の2つで決まります。②は個人情報保護委員会規則（[個人情報の保護に関する法律施行規則](https://www.ppc.go.jp/personalinfo/legal/)）第31条＝仮名加工情報の作成基準です。
+!!! warning "加工の根拠は「規則で必須」と「自主的（予防的）」を区別する"
+    加工の要否は、**① 分析に必要か（設計判断）** と **② 加工の根拠** の掛け合わせで決まります。根拠は次の2種類があります。
 
-    たとえば **クレジットカード番号は、たとえ分析に使いたくても、施行規則第31条第3号（不正利用で財産的被害が生じるおそれ）により削除が必須**です。氏名など特定の個人を識別できる記述（第1号）も同様に削除対象になります。
+    - **規則で必須（法令）**: 個人情報保護委員会規則（[個人情報の保護に関する法律施行規則](https://www.ppc.go.jp/personalinfo/legal/)）第31条＝仮名加工情報の作成基準。**クレジットカード番号は、たとえ分析に使いたくても、第31条第3号（財産的被害のおそれ）により削除が必須**。氏名など特定の個人を識別できる記述（第1号）も同様。
+    - **自主的（予防的）**: 規則で必須とまでは言い切れないが、識別リスクを下げるために行う加工。**解釈によっては「そこまで不要」ともいえる**もの。たとえば**生年月日 → 年代の一般化**は、他の識別子を除いていれば必須とは限らないが、準識別子の組合せリスクを下げるために自主的に加工しています。
 
 ??? note "利用目的と必要粒度の対応（この表の「必要性・必要粒度」列の根拠）"
     利用目的: 地域ごとに、どの顧客層（年代・性別）がどの商品に関心を持つかを分析し、実店舗の出店計画を検討する。
