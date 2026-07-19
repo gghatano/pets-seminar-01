@@ -92,7 +92,10 @@ nav:
       - "デモデータについて（case01）": case01_pseudonymized/02_dummy_data_spec.md
       - "デモデータについて（case02）": case02_anonymized/02_dummy_data_spec.md
       - 参照資料: references/README.md
-      - "Notebook仕様書（case01）": case01_pseudonymized/08_notebook_spec.md
-      - "Notebook仕様書（case02）": case02_anonymized/08_notebook_spec.md
-      - 設計・実装指示書(spec): spec.md
   - "ご意見・質問（GitHub Issues）": https://github.com/gghatano/pets-seminar-01/issues
+
+# 開発者向けドキュメント（受講者ナビには出さないが、リポジトリ/URL では参照可）
+not_in_nav: |
+  /spec.md
+  /case01_pseudonymized/08_notebook_spec.md
+  /case02_anonymized/08_notebook_spec.md
