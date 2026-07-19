@@ -13,7 +13,7 @@
 7. [結果確認](09_results.md)
 </div>
 
-> [加工の設計](05_processing_design.md) の方針を、実際の Python 処理に落とし込みます。手を動かす実行は [② Colab](notebook.md) で。
+> [加工の設計](05_processing_design.md) の方針を、具体的な処理に落とし込みます。実際の Python コードと実行は [② Colab](notebook.md) で。
 
 ## 主なルール
 
@@ -27,21 +27,21 @@
 - **削除**: 氏名・電話番号・店舗ID・取引ID・担当者ID・商品ID・（内部の明細ID）。
 
 ??? note "加工仕様一覧（列ごとの処理）"
-    | 元テーブル | 元項目 | 加工 | 処理 | 加工後 | Python（pandas） |
-    |-----------|--------|------|------|--------|------------------|
-    | customers | 会員ID | 置換 | 仮ID対応を作り置換 | 仮ID | `factorize`+シャッフルで `A000001` を割当て `map` |
-    | customers | 氏名・電話番号 | 削除 | 列削除 | ― | `drop` |
-    | customers | 生年月日 | 一般化 | 基準日で年齢→年代7区分 | 年代 | `pd.cut` |
-    | customers | 性別 | 加工なし | そのまま | 性別 | ― |
-    | customers | 住所 | 一般化 | 市区郡まで抽出 | 市区郡 | 正規表現で都道府県＋市区郡 |
-    | transactions | 会員ID | 置換 | 仮ID対応で置換 | 仮ID | `map` |
-    | transactions | 利用日時 | 一般化 | 秒を削除 | 利用日時（分） | `dt.floor("min")` |
-    | transactions | 店舗名 | 加工なし | そのまま | 店舗名 | ― |
-    | transactions | 店舗ID・担当者ID・取引ID | 削除 | 列削除 | ― | `drop` |
-    | purchases | 商品名 | 一般化 | カテゴリへ | 商品カテゴリ | 商品ID→カテゴリの対応表で `map` |
-    | purchases | 数量 | 丸め | しきい値でトップコーディング | 数量 | `clip(upper=5)` |
-    | purchases | 金額 | 丸め | 区分へ | 金額区分 | `pd.cut` |
-    | purchases | 明細ID・商品ID | 削除 | 列削除 | ― | `drop` |
+    | 元テーブル | 元項目 | 加工 | 処理 | 加工後 |
+    |-----------|--------|------|------|--------|
+    | customers | 会員ID | 置換 | 仮ID対応を作り置換 | 仮ID |
+    | customers | 氏名・電話番号 | 削除 | 列削除 | ― |
+    | customers | 生年月日 | 一般化 | 基準日で年齢→年代7区分 | 年代 |
+    | customers | 性別 | 加工なし | そのまま | 性別 |
+    | customers | 住所 | 一般化 | 市区郡まで抽出 | 市区郡 |
+    | transactions | 会員ID | 置換 | 仮ID対応で置換 | 仮ID |
+    | transactions | 利用日時 | 一般化 | 秒を削除 | 利用日時（分） |
+    | transactions | 店舗名 | 加工なし | そのまま | 店舗名 |
+    | transactions | 店舗ID・担当者ID・取引ID | 削除 | 列削除 | ― |
+    | purchases | 商品名 | 一般化 | カテゴリへ | 商品カテゴリ |
+    | purchases | 数量 | 丸め | しきい値でトップコーディング | 数量 |
+    | purchases | 金額 | 丸め | 区分へ | 金額区分 |
+    | purchases | 明細ID・商品ID | 削除 | 列削除 | ― |
 
 - **加工後の連結**: 加工後の顧客属性・購買履歴は**仮ID**で結合し、「属性 × 購買傾向」を分析する（取引の粒度は保つが、取引IDは残さない）。
 
