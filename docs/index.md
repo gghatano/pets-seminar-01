@@ -1,15 +1,43 @@
 # 仮名加工情報・匿名加工情報 事例再現デモ
 
-個人情報保護委員会事務局の事例レポートを参考に、実際のデータ加工を Python で再現する **デモ・教材** です。「どう加工するか」より、**どう考えて加工方針を決めるか**（データ加工設計の思考プロセス）を追体験することを狙いにしています。
+個人情報保護委員会事務局の事例レポートを参考に、**仮名加工情報**と**匿名加工情報**という2種類の加工を、実際のデータ加工 Python コードで再現する **デモ・教材** です。「どう加工するか」より、**どう考えて加工方針を決めるか**（データ加工設計の思考プロセス）を追体験することを狙いにしています。
 
-[① 全体概要からはじめる](case01_pseudonymized/01_case_summary.md){ .md-button .md-button--primary }
-[▶ Colab で動かす](https://colab.research.google.com/github/gghatano/pets-seminar-01/blob/main/notebooks/case01_pseudonymized.ipynb){ .md-button }
+## 学べる2つの加工
+
+<div class="grid cards" markdown>
+
+-   __case01 ・ 仮名加工情報__
+
+    ---
+
+    食品オンライン通販の顧客・購買データを、社内分析のために **仮名加工**します。会員IDを整理番号に置換するなど、*他の情報と照合しなければ個人を特定できない* 状態にする考え方を学びます。
+
+    [→ ① 概要から読む](case01_pseudonymized/01_case_summary.md) ・ [▶ Colab で動かす](https://colab.research.google.com/github/gghatano/pets-seminar-01/blob/main/notebooks/case01_pseudonymized.ipynb)
+
+-   __case02 ・ 匿名加工情報__
+
+    ---
+
+    ID-POS 購買データを第三者へ提供するために **匿名加工**します。年代・カテゴリ・金額区分へ丸めるなど、*特定の個人を識別できず復元もできない* 状態にする考え方を学びます。
+
+    [→ ① 概要から読む](case02_anonymized/01_case_summary.md) ・ [▶ Colab で動かす](https://colab.research.google.com/github/gghatano/pets-seminar-01/blob/main/notebooks/case02_anonymized.ipynb)
+
+</div>
+
 [1枚チートシート（印刷/PDF可）](cheatsheet.md){ .md-button }
 
-## この教材で進む道のり（全7ステップ）
+## 各事例の進め方（① 検討 → ② 実装 → ③ 結果）
+
+どちらの事例も、次の3層・全7ステップで進みます。①〜⑤は「考え方の設計」（この HTML サイト）、⑥は Colab での実装、⑦は結果の確認です。
+
+| 層 | 媒体 | やること |
+|----|------|----------|
+| **① 検討**（ステップ 1〜5） | この HTML サイト | 事例を理解し、なぜその加工にするのかを**設計する** |
+| **② 実装**（ステップ 6） | Google Colaboratory | 設計にもとづいて、実際に**加工処理を実行する** |
+| **③ 結果**（ステップ 7） | この HTML サイト | 加工前後を比べ、**目的の分析が成立するか確認する** |
 
 <div class="wizard wizard--overview" markdown="1">
-クリックで各ステップへ
+クリックで各ステップへ（例: case01）
 { .wizard-cap }
 
 1. [全体概要](case01_pseudonymized/01_case_summary.md)
@@ -21,27 +49,9 @@
 7. [結果確認](case01_pseudonymized/09_results.md)
 </div>
 
-①〜⑤は「考え方の設計」（この HTML サイト）、⑥は Colab での実装、⑦は結果の確認です。上の **［① 全体概要からはじめる］** か、ステップ①をクリックして始めてください。
-
-| 層 | 媒体 | やること |
-|----|------|----------|
-| **① 検討**（ステップ 1〜5） | この HTML サイト | 事例を理解し、なぜその加工にするのかを**設計する** |
-| **② 実装**（ステップ 6） | Google Colaboratory | 設計にもとづいて、実際に**加工処理を実行する** |
-| **③ 結果**（ステップ 7） | この HTML サイト | 加工前後を比べ、**目的の分析が成立するか確認する** |
-
-!!! tip "手を動かして学びたい人へ（逆順ルート）"
-    データ操作に慣れているなら、先に **[▶ Colab](https://colab.research.google.com/github/gghatano/pets-seminar-01/blob/main/notebooks/case01_pseudonymized.ipynb)** を上から流して結果を見てから、設計ページで「なぜその加工にするのか」を読む順でも構いません。要点だけ先に掴みたいなら **[1枚チートシート](cheatsheet.md)** が近道です。
-
-## 事例
-
-| 事例 | 種別 | ステータス | 実行 |
-|------|------|-----------|------|
-| **case01** | 仮名加工情報（食品オンライン通販の顧客・購買データ） | ✅ 公開中 | [Colab](https://colab.research.google.com/github/gghatano/pets-seminar-01/blob/main/notebooks/case01_pseudonymized.ipynb) |
-| **case02** | 匿名加工情報（ID-POS 購買データの第三者提供） | ✅ 公開中 | [Colab](https://colab.research.google.com/github/gghatano/pets-seminar-01/blob/main/notebooks/case02_anonymized.ipynb) |
-
 !!! info "この教材について"
     - **学べること**: ① 個人データを「見て」性質を評価する目、② 利用目的から「必要な情報・粒度」を考える力、③ Python での具体的な加工方法。
-    - **所要時間の目安**: 読み 15〜20分＋Colab 実行 10分。前提知識は不要（Python を少し読めると理解が深まります）。
+    - **所要時間の目安**: 1事例あたり 読み 15〜20分＋Colab 実行 10分。前提知識は不要（Python を少し読めると理解が深まります）。
     - 難しい用語は [用語集](glossary.md) にまとめています。
 
 !!! warning "扱うデータについて"
