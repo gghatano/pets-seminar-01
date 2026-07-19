@@ -94,3 +94,29 @@ def test_committed_csv_matches_schema():
     assert list(web_access.columns) == ACCESS_COLS
     assert len(customers) == gen.N_CUSTOMERS
     assert set(purchases["会員ID"]).issubset(set(customers["会員ID"]))
+
+
+def test_committed_csv_is_byte_identical_to_regeneration(tmp_path):
+    """コミット済み CSV が、生成器の再生成結果と**バイト一致**する。
+
+    CLAUDE.md / spec §15 の「再生成はバイト一致」を CI で保証する。生成器を
+    変更してコミット済み CSV を更新し忘れると、このテストが失敗する。
+    書き出しは main() と同じ引数（index=False, encoding=utf-8）で行う。
+    """
+    rng = np.random.default_rng(gen.SEED)
+    customers = gen.generate_customers(rng)
+    purchases = gen.generate_purchases(rng, customers)
+    web_access = gen.generate_web_access(rng, customers)
+
+    for name, df in [
+        ("customers.csv", customers),
+        ("purchases.csv", purchases),
+        ("web_access.csv", web_access),
+    ]:
+        out = tmp_path / name
+        df.to_csv(out, index=False, encoding="utf-8")
+        assert out.read_bytes() == (RAW / name).read_bytes(), (
+            f"{name} がコミット済みデータと一致しません。"
+            " 生成器を変更したら CSV を再生成してコミットしてください:"
+            " uv run python src/dummy_data/case01_pseudonymized.py"
+        )
