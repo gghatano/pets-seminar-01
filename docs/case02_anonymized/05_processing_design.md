@@ -56,25 +56,25 @@
 
 ## 項目ごとの評価と加工方針（一覧）
 
-色は加工の種類（緑＝置換/一般化・赤＝削除・無色＝加工なし）、**「加工の根拠」列**は施行規則第34条のどの号にあたるかです。
+色は加工の種類（緑＝置換/一般化・赤＝削除・無色＝加工なし）、**「加工の根拠」列**は、作成基準で**規則で必須**か、水準を判断する**自主的**な措置かの区分です（施行規則34条の各号との対応は下の折りたたみ）。
 
-<p class="master-legend"><span class="lg"><span class="sw sw-chg"></span>置換・一般化</span><span class="lg"><span class="sw sw-del"></span>削除</span><span class="lg"><span class="sw sw-keep"></span>加工なし</span><span class="lg"><span class="sw sw-rule"></span>34条（1/3/4号）で必須</span><span class="lg"><span class="sw sw-vol"></span>34条5号の措置（水準は判断）</span></p>
+<p class="master-legend"><span class="lg"><span class="sw sw-chg"></span>置換・一般化</span><span class="lg"><span class="sw sw-del"></span>削除</span><span class="lg"><span class="sw sw-keep"></span>加工なし</span><span class="lg"><span class="sw sw-rule"></span>規則で必須</span><span class="lg"><span class="sw sw-vol"></span>自主的（水準は判断）</span></p>
 
 <table class="master">
 <thead><tr><th>項目</th><th>識別性</th><th>特異性</th><th>提供先の有用性</th><th>加工方針</th><th>加工の根拠</th><th>理由</th></tr></thead>
 <tbody>
-<tr class="is-required"><td>会員ID</td><td>低（単体）</td><td>―</td><td>連結に必要</td><td class="cell-chg">仮IDへ置換</td><td><span class="rule">34条3号</span></td><td>元データと連結できる符号を断つ（対応表は残さない）</td></tr>
-<tr class="is-required"><td>氏名</td><td>高</td><td>―</td><td>不要</td><td class="cell-del">削除</td><td><span class="rule">34条1号</span></td><td>単体で個人を特定できる記述</td></tr>
-<tr class="is-required"><td>電話番号</td><td>高</td><td>―</td><td>不要</td><td class="cell-del">削除</td><td><span class="rule">34条1号</span></td><td>本人到達性。照合で特定につながる</td></tr>
-<tr><td>生年月日</td><td>中</td><td>超高齢は高</td><td>年代で有用</td><td class="cell-chg">年代7区分へ丸め</td><td><span class="vol">5号措置</span> <span class="rule">4号</span></td><td>準識別子を丸めて該当者を増やす。超高齢は特異値として対処</td></tr>
-<tr><td>住所</td><td>中</td><td>―</td><td>エリアで有用</td><td class="cell-chg">市区郡へ丸め</td><td><span class="vol">5号措置</span></td><td>詳細エリアを落とし特定性を下げる</td></tr>
+<tr class="is-required"><td>会員ID</td><td>低（単体）</td><td>―</td><td>連結に必要</td><td class="cell-chg">仮IDへ置換</td><td><span class="rule">規則で必須</span></td><td>元データと連結できる符号を断つ（対応表は残さない）</td></tr>
+<tr class="is-required"><td>氏名</td><td>高</td><td>―</td><td>不要</td><td class="cell-del">削除</td><td><span class="rule">規則で必須</span></td><td>単体で個人を特定できる記述</td></tr>
+<tr class="is-required"><td>電話番号</td><td>高</td><td>―</td><td>不要</td><td class="cell-del">削除</td><td><span class="rule">規則で必須</span></td><td>本人到達性。照合で特定につながる</td></tr>
+<tr><td>生年月日</td><td>中</td><td>超高齢は高</td><td>年代で有用</td><td class="cell-chg">年代7区分へ丸め</td><td><span class="vol">自主的</span> <span class="rule">規則で必須</span></td><td>準識別子を丸めて該当者を増やす。超高齢は特異値として対処</td></tr>
+<tr><td>住所</td><td>中</td><td>―</td><td>エリアで有用</td><td class="cell-chg">市区郡へ丸め</td><td><span class="vol">自主的</span></td><td>詳細エリアを落とし特定性を下げる</td></tr>
 <tr><td>性別</td><td>低</td><td>―</td><td>有用</td><td class="cell-keep">加工しない</td><td>―</td><td>生年月日・住所の加工で対応、有用性が高い</td></tr>
-<tr><td>利用日時</td><td>中</td><td>―</td><td>時間帯で有用</td><td class="cell-chg">分単位へ丸め</td><td><span class="vol">5号措置</span></td><td>店舗（位置）× 秒精度の照合を防ぐ</td></tr>
+<tr><td>利用日時</td><td>中</td><td>―</td><td>時間帯で有用</td><td class="cell-chg">分単位へ丸め</td><td><span class="vol">自主的</span></td><td>店舗（位置）× 秒精度の照合を防ぐ</td></tr>
 <tr><td>店舗名</td><td>中</td><td>―</td><td>有用</td><td class="cell-keep">加工しない</td><td>―</td><td>利用日時の加工で対応、有用性が高い</td></tr>
-<tr><td>店舗ID・取引ID・担当者ID・商品ID</td><td>低</td><td>―</td><td>不要</td><td class="cell-del">削除</td><td><span class="vol">5号措置</span></td><td>提供先に不要。想定外の再識別リスクを下げる</td></tr>
-<tr class="is-required"><td>商品名</td><td>低</td><td>希少品は高</td><td>カテゴリで有用</td><td class="cell-chg">希少品はカテゴリ化／削除</td><td><span class="rule">34条4号</span></td><td>限定品・超高級品は特異な記述</td></tr>
-<tr class="is-required"><td>数量</td><td>低</td><td>大量は高</td><td>有用</td><td class="cell-chg">特異な数量は丸め／削除</td><td><span class="rule">34条4号</span></td><td>大量購入は特異な記述</td></tr>
-<tr class="is-required"><td>金額</td><td>低</td><td>超高額は高</td><td>有用</td><td class="cell-chg">超高額は区分へ丸め</td><td><span class="rule">34条4号</span></td><td>超高額は特異な記述（トップコーディング）</td></tr>
+<tr><td>店舗ID・取引ID・担当者ID・商品ID</td><td>低</td><td>―</td><td>不要</td><td class="cell-del">削除</td><td><span class="vol">自主的</span></td><td>提供先に不要。想定外の再識別リスクを下げる</td></tr>
+<tr class="is-required"><td>商品名</td><td>低</td><td>希少品は高</td><td>カテゴリで有用</td><td class="cell-chg">希少品はカテゴリ化／削除</td><td><span class="rule">規則で必須</span></td><td>限定品・超高級品は特異な記述</td></tr>
+<tr class="is-required"><td>数量</td><td>低</td><td>大量は高</td><td>有用</td><td class="cell-chg">特異な数量は丸め／削除</td><td><span class="rule">規則で必須</span></td><td>大量購入は特異な記述</td></tr>
+<tr class="is-required"><td>金額</td><td>低</td><td>超高額は高</td><td>有用</td><td class="cell-chg">超高額は区分へ丸め</td><td><span class="rule">規則で必須</span></td><td>超高額は特異な記述（トップコーディング）</td></tr>
 </tbody>
 </table>
 
