@@ -72,10 +72,22 @@ nav:
       - "③ 結果":
           - 加工後テーブル定義: case01_pseudonymized/07_table_definition_after.md
           - 加工結果とチェック: case01_pseudonymized/09_results.md
-  - "case02 匿名加工情報（準備中）": case02_anonymized/README.md
+  - "case02 匿名加工情報":
+      - "① 検討":
+          - 事例概要: case02_anonymized/01_case_summary.md
+          - データを見る（テーブル定義）: case02_anonymized/03_table_definition_before.md
+          - 情報特性の評価: case02_anonymized/04_column_classification.md
+          - 加工の設計: case02_anonymized/05_processing_design.md
+          - 加工仕様: case02_anonymized/06_processing_spec.md
+      - "② 実装（Colab）": case02_anonymized/notebook.md
+      - "③ 結果":
+          - 加工後テーブル定義: case02_anonymized/07_table_definition_after.md
+          - 加工結果とチェック: case02_anonymized/09_results.md
   - 参考:
       - 用語集: glossary.md
-      - デモデータについて: case01_pseudonymized/02_dummy_data_spec.md
+      - "デモデータについて（case01）": case01_pseudonymized/02_dummy_data_spec.md
+      - "デモデータについて（case02）": case02_anonymized/02_dummy_data_spec.md
       - 参照資料: references/README.md
-      - Notebook仕様書: case01_pseudonymized/08_notebook_spec.md
+      - "Notebook仕様書（case01）": case01_pseudonymized/08_notebook_spec.md
+      - "Notebook仕様書（case02）": case02_anonymized/08_notebook_spec.md
       - 設計・実装指示書(spec): spec.md
