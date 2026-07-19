@@ -13,6 +13,10 @@ extra_css:
 theme:
   name: material
   language: ja
+  favicon: assets/favicon.svg
+  logo: assets/favicon.svg
+  icon:
+    repo: fontawesome/brands/github
   features:
     - navigation.sections
     - navigation.top
@@ -91,3 +95,4 @@ nav:
       - "Notebook仕様書（case01）": case01_pseudonymized/08_notebook_spec.md
       - "Notebook仕様書（case02）": case02_anonymized/08_notebook_spec.md
       - 設計・実装指示書(spec): spec.md
+  - "ご意見・質問（GitHub Issues）": https://github.com/gghatano/pets-seminar-01/issues
