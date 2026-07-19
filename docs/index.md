@@ -28,26 +28,13 @@
 
 ## 各事例の進め方（① 検討 → ② 実装 → ③ 結果）
 
-どちらの事例も、次の3層・全7ステップで進みます。①〜⑤は「考え方の設計」（この HTML サイト）、⑥は Colab での実装、⑦は結果の確認です。
+どちらの事例も、次の **3層（① 検討 → ② 実装 → ③ 結果）** で進みます。①〜⑤は「考え方の設計」（この HTML サイト）、⑥は Colab での実装、⑦は結果の確認です。各事例のページ先頭に「いま何ステップ目か」を示すステッパーがあるので、上から順にたどれます。
 
 | 層 | 媒体 | やること |
 |----|------|----------|
 | **① 検討**（ステップ 1〜5） | この HTML サイト | 事例を理解し、なぜその加工にするのかを**設計する** |
 | **② 実装**（ステップ 6） | Google Colaboratory | 設計にもとづいて、実際に**加工処理を実行する** |
 | **③ 結果**（ステップ 7） | この HTML サイト | 加工前後を比べ、**目的の分析が成立するか確認する** |
-
-<div class="wizard wizard--overview" markdown="1">
-クリックで各ステップへ（例: case01）
-{ .wizard-cap }
-
-1. [全体概要](case01_pseudonymized/01_case_summary.md)
-2. [データ概要理解](case01_pseudonymized/03_table_definition_before.md)
-3. [データ詳細理解](case01_pseudonymized/04_column_classification.md)
-4. [加工設計](case01_pseudonymized/05_processing_design.md)
-5. [加工仕様](case01_pseudonymized/06_processing_spec.md)
-6. [実装](case01_pseudonymized/notebook.md)
-7. [結果確認](case01_pseudonymized/09_results.md)
-</div>
 
 !!! info "この教材について"
     - **学べること**: ① 個人データを「見て」性質を評価する目、② 利用目的から「必要な情報・粒度」を考える力、③ Python での具体的な加工方法。
