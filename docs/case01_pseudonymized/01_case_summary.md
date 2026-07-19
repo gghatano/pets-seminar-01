@@ -68,4 +68,6 @@
 
     「なぜこの方針か」は [情報特性の評価](04_column_classification.md) と [加工の設計](05_processing_design.md) で扱います。
 
+→ 次に [データを見る（テーブル定義）](03_table_definition_before.md) で、加工前の元データの構造を確認します。
+
 > 出典: 個人情報保護委員会事務局レポート「仮名加工情報・匿名加工情報 ―事例編―」1.1 事例1（[参照資料](../references/README.md)）。

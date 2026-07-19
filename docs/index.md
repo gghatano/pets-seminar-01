@@ -47,7 +47,10 @@
 !!! warning "扱うデータについて"
     データはすべて教材用の**合成データ（ダミーデータ）**で、実在の個人・値とは無関係です。実際の個人データに対する法令適合性を保証するものではありません。
 
+!!! question "ご意見・質問・誤りの指摘"
+    教材の分かりにくい点・誤り・改善案は **[GitHub Issues](https://github.com/gghatano/pets-seminar-01/issues)** へお寄せください。セミナー中の質問メモの投稿先としても使えます。
+
 ---
 
 開発者向けの設計・実装指示は [設計・実装指示書 (spec)](spec.md) を参照。
-リポジトリ・ご意見: [gghatano/pets-seminar-01](https://github.com/gghatano/pets-seminar-01)
+リポジトリ: [gghatano/pets-seminar-01](https://github.com/gghatano/pets-seminar-01) ／ ライセンス: 教材コンテンツ CC BY 4.0・コード MIT（[詳細](https://github.com/gghatano/pets-seminar-01/blob/main/LICENSE)）。

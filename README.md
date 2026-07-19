@@ -90,3 +90,14 @@ uv run mkdocs build --strict
 
 `docs/spec.md` 第22節の実装順序に従います。設計成果物間に矛盾がある状態で Notebook 実装に進みません。
 タスクは GitHub Issue で管理します。
+
+## ライセンス
+
+本リポジトリは用途に応じて2つのライセンスを併用します（詳細は [`LICENSE`](LICENSE)）。
+
+| 対象 | ライセンス |
+|------|-----------|
+| 教材コンテンツ（`docs/` の文章・図・表、`data/` の合成データ） | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)（表示すれば改変・再配布可） |
+| コード（`src/`・`notebooks/`・`tests/`・設定ファイル） | [MIT License](LICENSE) |
+
+再利用の際は出典として本リポジトリ（`gghatano/pets-seminar-01`）を表示してください。
