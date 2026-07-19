@@ -73,7 +73,7 @@
 <tr><td>店舗名</td><td>中</td><td>―</td><td>有用</td><td class="cell-keep">加工しない</td><td>―</td><td>利用日時の加工で対応、有用性が高い</td></tr>
 <tr><td>店舗ID・取引ID・担当者ID・商品ID</td><td>低</td><td>―</td><td>不要</td><td class="cell-del">削除</td><td><span class="vol">5号措置</span></td><td>提供先に不要。想定外の再識別リスクを下げる</td></tr>
 <tr class="is-required"><td>商品名</td><td>低</td><td>希少品は高</td><td>カテゴリで有用</td><td class="cell-chg">希少品はカテゴリ化／削除</td><td><span class="rule">34条4号</span></td><td>限定品・超高級品は特異な記述</td></tr>
-<tr class="is-required"><td>数量</td><td>低</td><td>大量は高</td><td>有用</td><td class="cell-chg">特異な数量は丸め／削除</td><td><span class="rule">34条4号</span></td><td>大量購入は特異な記述（ミクロアグリゲーション等）</td></tr>
+<tr class="is-required"><td>数量</td><td>低</td><td>大量は高</td><td>有用</td><td class="cell-chg">特異な数量は丸め／削除</td><td><span class="rule">34条4号</span></td><td>大量購入は特異な記述</td></tr>
 <tr class="is-required"><td>金額</td><td>低</td><td>超高額は高</td><td>有用</td><td class="cell-chg">超高額は区分へ丸め</td><td><span class="rule">34条4号</span></td><td>超高額は特異な記述（トップコーディング）</td></tr>
 </tbody>
 </table>

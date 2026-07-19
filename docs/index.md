@@ -62,5 +62,4 @@
 
 ---
 
-開発者向けの設計・実装指示は [設計・実装指示書 (spec)](spec.md) を参照。
 リポジトリ: [gghatano/pets-seminar-01](https://github.com/gghatano/pets-seminar-01) ／ ライセンス: 教材コンテンツ CC BY 4.0・コード MIT（[詳細](https://github.com/gghatano/pets-seminar-01/blob/main/LICENSE)）。
