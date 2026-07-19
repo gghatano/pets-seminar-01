@@ -24,7 +24,7 @@
 
 </div>
 
-[1枚チートシート（印刷/PDF可）](cheatsheet.md){ .md-button }
+1枚チートシート（印刷/PDF可）: [case01](cheatsheet.md){ .md-button } [case02](cheatsheet_case02.md){ .md-button }
 
 ## 各事例の進め方（① 検討 → ② 実装 → ③ 結果）
 

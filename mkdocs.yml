@@ -64,7 +64,9 @@ markdown_extensions:
 # 3層構成（HTML=検討/結果、Colab=実装）
 nav:
   - はじめに: index.md
-  - 1枚チートシート: cheatsheet.md
+  - 1枚チートシート:
+      - "case01 仮名加工情報": cheatsheet.md
+      - "case02 匿名加工情報": cheatsheet_case02.md
   - "case01 仮名加工情報":
       - "① 検討":
           - 事例概要: case01_pseudonymized/01_case_summary.md
